@@ -1,6 +1,7 @@
 package indi.junqiu.quickfixj.serviceApp.config;
 
 import indi.junqiu.quickfixj.serviceApp.adapter.ServiceAdapter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import quickfix.*;
@@ -12,6 +13,7 @@ import quickfix.*;
  * @create: 2023-07-12 18:58
  **/
 @Configuration
+@ConditionalOnProperty(name = {"quickfixj.server.enabled"}, havingValue = "true")
 public class ServiceConfig {
     @Bean
     public ServiceAdapter serverApplication() {
