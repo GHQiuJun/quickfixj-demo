@@ -1,4 +1,4 @@
-package indi.junqiu.quickfixj;
+package indi.lorin.quickfixj;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

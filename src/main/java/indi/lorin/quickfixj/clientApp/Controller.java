@@ -1,7 +1,7 @@
-package indi.junqiu.quickfixj.clientApp;
+package indi.lorin.quickfixj.clientApp;
 
-import indi.junqiu.quickfixj.enums.FixVersionEnum;
-import indi.junqiu.quickfixj.service.QuickFixTemplateService;
+import indi.lorin.quickfixj.enums.FixVersionEnum;
+import indi.lorin.quickfixj.service.QuickFixTemplateService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;

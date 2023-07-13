@@ -1,4 +1,4 @@
-package indi.junqiu.quickfixj.service;
+package indi.lorin.quickfixj.service;
 
 import io.allune.quickfixj.spring.boot.starter.template.QuickFixJTemplate;
 import org.springframework.stereotype.Service;

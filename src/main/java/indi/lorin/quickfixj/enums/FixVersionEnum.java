@@ -1,4 +1,4 @@
-package indi.junqiu.quickfixj.enums;
+package indi.lorin.quickfixj.enums;
 
 import lombok.Getter;
 

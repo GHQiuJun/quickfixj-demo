@@ -1,4 +1,4 @@
-package indi.junqiu.quickfixj.serviceApp.adapter;
+package indi.lorin.quickfixj.serviceApp.adapter;
 
 import lombok.extern.slf4j.Slf4j;
 import quickfix.*;

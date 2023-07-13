@@ -1,8 +1,6 @@
-package indi.junqiu.quickfixj.clientApp.config;
+package indi.lorin.quickfixj.clientApp.config;
 
-import indi.junqiu.quickfixj.clientApp.adapter.ClientAdapter;
-import indi.junqiu.quickfixj.serviceApp.adapter.ServiceAdapter;
-import org.springframework.beans.factory.annotation.Qualifier;
+import indi.lorin.quickfixj.clientApp.adapter.ClientAdapter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

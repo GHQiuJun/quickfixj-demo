@@ -1,4 +1,4 @@
-package indi.junqiu.quickfixj.clientApp.adapter;
+package indi.lorin.quickfixj.clientApp.adapter;
 
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
