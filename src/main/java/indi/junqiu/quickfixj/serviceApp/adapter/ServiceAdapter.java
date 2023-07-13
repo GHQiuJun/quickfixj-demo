@@ -52,7 +52,7 @@ public class ServiceAdapter extends MessageCracker implements Application {
     public void fromAdmin(Message message, SessionID sessionId) throws RejectLogon, FieldNotFound {
         // 登录操作鉴权逻辑
         if (message.getHeader().getString(MsgType.FIELD).equals(MsgType.LOGON)) {
-            log.info("fromAdmin logon: Message={}, SessionId={}", message, sessionId);
+            log.info("service fromAdmin logon: Message={}, SessionId={}", message, sessionId);
 
             String username = message.getString(Username.FIELD);
             String password = message.getString(Password.FIELD);
@@ -63,7 +63,7 @@ public class ServiceAdapter extends MessageCracker implements Application {
                 log.info("登录成功：{}", sessionId);
             }
         } else {
-            log.info("fromAdmin: Message={}, SessionId={}", message, sessionId);
+            log.info("service fromAdmin: Message={}, SessionId={}", message, sessionId);
             try {
                 // 使用 MessageCracker 分解不同的消息
                 crack(message, sessionId);
@@ -75,38 +75,38 @@ public class ServiceAdapter extends MessageCracker implements Application {
 
     @Override
     protected void onMessage(Message message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
-        log.info("Message={}, SessionId={}", message, sessionID);
+        log.info("service Message={}, SessionId={}", message, sessionID);
     }
 
     /*Fix4.1 MessageCracker*/
     @MessageCracker.Handler
     public void onMessage(quickfix.fix41.Logon message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
-        log.info("Message={}, SessionId={}", message, sessionID);
+        log.info("service Message={}, SessionId={}", message, sessionID);
     }
 
     @MessageCracker.Handler
     public void onMessage(quickfix.fix41.Heartbeat message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
-        log.info("Message={}, SessionId={}", message, sessionID);
+        log.info("service Message={}, SessionId={}", message, sessionID);
     }
 
     @MessageCracker.Handler
     public void orderCancelRequestHandler(quickfix.fix41.OrderCancelRequest orderCancelRequest, SessionID sessionID) {
-        log.info("Message={}, SessionId={}", orderCancelRequest, sessionID);
+        log.info("service Message={}, SessionId={}", orderCancelRequest, sessionID);
     }
 
     /*Fix4.2 MessageCracker*/
     @MessageCracker.Handler
     public void onMessage(quickfix.fix42.Logon message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
-        log.info("Message={}, SessionId={}", message, sessionID);
+        log.info("service Message={}, SessionId={}", message, sessionID);
     }
 
     @MessageCracker.Handler
     public void onMessage(quickfix.fix42.Heartbeat message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
-        log.info("Message={}, SessionId={}", message, sessionID);
+        log.info("service Message={}, SessionId={}", message, sessionID);
     }
 
     @MessageCracker.Handler
     public void orderCancelRequestHandler(quickfix.fix42.OrderCancelRequest orderCancelRequest, SessionID sessionID) {
-        log.info("Message={}, SessionId={}", orderCancelRequest, sessionID);
+        log.info("service Message={}, SessionId={}", orderCancelRequest, sessionID);
     }
 }

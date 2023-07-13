@@ -24,9 +24,9 @@ public class ClientAdapter extends ApplicationAdapter {
     public void toAdmin(Message message, SessionID sessionId) {
         if (message.getHeader().getString(MsgType.FIELD).equals(MsgType.LOGON)) {
             addAuthentication(message);
-            log.info("toAdmin logon: Message={}, SessionId={}", message, sessionId);
+            log.info("client toAdmin logon: Message={}, SessionId={}", message, sessionId);
         } else {
-            log.info("toAdmin: Message={}, SessionId={}", message, sessionId);
+            log.info("client toAdmin: Message={}, SessionId={}", message, sessionId);
         }
         super.toAdmin(message, sessionId);
     }
@@ -40,7 +40,7 @@ public class ClientAdapter extends ApplicationAdapter {
     @Override
     public void fromAdmin(Message message, SessionID sessionId) throws RejectLogon, IncorrectTagValue, IncorrectDataFormat, FieldNotFound {
         if (message.getHeader().getString(MsgType.FIELD).equals(MsgType.LOGON) && message.getHeader().getString(SenderCompID.FIELD).contains("Client")) {
-            log.info("fromAdmin logon: Message={}, SessionId={}", message, sessionId);
+            log.info("client fromAdmin logon: Message={}, SessionId={}", message, sessionId);
 
             String username = message.getString(Username.FIELD);
             String password = message.getString(Password.FIELD);
@@ -49,7 +49,7 @@ public class ClientAdapter extends ApplicationAdapter {
                 throw new RejectLogon("Invalid username or password");
             }
         } else {
-            log.info("fromAdmin: Message={}, SessionId={}", message, sessionId);
+            log.info("client fromAdmin: Message={}, SessionId={}", message, sessionId);
         }
         super.fromAdmin(message, sessionId);
     }
