@@ -1,7 +1,7 @@
 # quickfixj-demo
 
 ## Des
-- 基于 quickfixj 和 quickfixj-spring-boot-starter-examples 实现 Fix 通信实例。
+- 基于 quickfixj 和 quickfixj-spring-boot-starter-examples 实现 Fix 通信示例。
 - quickfixj: https://github.com/quickfix-j/quickfixj
 - quickfixj-spring-boot-starter-examples: https://github.com/esanchezros/quickfixj-spring-boot-starter-examples
 
